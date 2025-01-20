@@ -1,24 +1,21 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import ListBox from "./components/listBox";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "#FAACA8",
+        backgroundImage: "linear-gradient(19deg, #FAACA8 0%, #DDD6F3 100%)",
+        height: "100vh",
+      }}
+    >
+      <h1 style={{ position: "fixed", top: 10, left: 50, color: "#6c5353" }}>
+        Lina&apos;s To Do List
+      </h1>
+      <ListBox />
     </div>
   );
 }
