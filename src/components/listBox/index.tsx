@@ -1,9 +1,16 @@
+import { useState } from "react";
 import Form from "../form";
 import List from "../list";
 import { ActivityForm } from "./type";
 
 function ListBox() {
-  // const { title } = ActivityForm.useWatch();
+  const [dataList, setDataList] = useState<
+    {
+      id: string;
+      isChecked: boolean;
+      title: string;
+    }[]
+  >([]);
 
   return (
     <div
@@ -22,8 +29,8 @@ function ListBox() {
         gap: 6,
       }}
     >
-      <Form />
-      <List />
+      <Form setDataList={setDataList} />
+      <List dataList={dataList} />
     </div>
   );
 }

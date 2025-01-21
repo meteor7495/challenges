@@ -26,7 +26,8 @@
     "react-hook-form": "^7.45.0",
     "react-hook-form-context": "1.0.0",
     "source-map-loader": "^4.0.1",
-    "@hookform/error-message": "^2.0.1"
+    "@hookform/error-message": "^2.0.1",
+    "uuid": "11.0.5"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "19.6.0",
