@@ -18,5 +18,5 @@
     "jsx": "react-jsx",
     "downlevelIteration": true
   },
-  "include": ["src", "config-overrides.js", "i18next.d.ts"]
+  "include": ["src", "i18next.d.ts"]
 }

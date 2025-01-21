@@ -1,4 +1,4 @@
-import ListBox from "./components/listBox";
+import { ListBox } from "./components/listBox";
 
 function App() {
   return (

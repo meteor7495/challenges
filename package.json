@@ -25,6 +25,7 @@
     "react-i18next": "^13.0.0",
     "react-hook-form": "^7.45.0",
     "react-hook-form-context": "1.0.0",
+    "source-map-loader": "^4.0.1",
     "@hookform/error-message": "^2.0.1"
   },
   "devDependencies": {
