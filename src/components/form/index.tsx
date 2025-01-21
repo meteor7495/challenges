@@ -2,6 +2,7 @@ import { PlusOutlined } from "@ant-design/icons";
 import { Button, Col, Input, Row } from "antd";
 import { v4 as uuidv4 } from "uuid";
 import { ActivityForm } from "../listBox/type";
+import { useStyles } from "./style";
 
 interface FormProps {
   setDataList: React.Dispatch<
@@ -16,6 +17,8 @@ interface FormProps {
 }
 
 function Form({ setDataList }: FormProps) {
+  const classes = useStyles();
+
   const { errors } = ActivityForm.useFormState();
   const { handleSubmit, reset, getValues } = ActivityForm.useFormContext();
 
@@ -69,16 +72,7 @@ function Form({ setDataList }: FormProps) {
             />
           )}
         />
-        <p
-          style={{
-            direction: "rtl",
-            height: 16,
-            margin: 0,
-            fontSize: 12,
-            marginTop: 2,
-            color: "red",
-          }}
-        >
+        <p className={classes.errorLabel}>
           {!!errors.title ? errors.title?.message : ""}
         </p>
       </Col>

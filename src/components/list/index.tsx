@@ -1,5 +1,6 @@
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { Button, Checkbox } from "antd";
+import { useStyles } from "./style";
 
 interface ListProps {
   dataList: {
@@ -10,34 +11,12 @@ interface ListProps {
 }
 
 function List({ dataList }: ListProps) {
+  const classes = useStyles();
+
   return (
-    <div
-      style={{
-        display: "flex",
-        flex: 1,
-        width: "100%",
-        border: "1px solid #DEDEDE",
-        borderRadius: 20,
-        padding: 8,
-      }}
-    >
+    <div className={classes.listContainer}>
       {dataList.map((item) => (
-        <div
-          key={item.id}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            direction: "rtl",
-            justifyContent: "space-between",
-            paddingInline: 10,
-            width: "100%",
-            height: 60,
-            backgroundColor: "red",
-            borderRadius: 16,
-            backgroundImage:
-              "linear-gradient(to right, #E0EAFC 0%, #CFDEF3  51%, #E0EAFC  100%)",
-          }}
-        >
+        <div key={item.id} className={classes.itemContainer}>
           <Checkbox checked={item.isChecked}>{item.title}</Checkbox>
           <div>
             <Button
