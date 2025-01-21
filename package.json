@@ -21,8 +21,6 @@
     "react-jss": "10.10.0",
     "@ant-design/icons": "5.5.2",
     "antd": "5.23.2",
-    "i18next": "^23.2.0",
-    "react-i18next": "^13.0.0",
     "react-hook-form": "^7.45.0",
     "react-hook-form-context": "1.0.0",
     "source-map-loader": "^4.0.1",
