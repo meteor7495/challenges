@@ -1,4 +1,4 @@
-import { PlusOutlined } from "@ant-design/icons";
+import { PlusOutlined, SaveOutlined } from "@ant-design/icons";
 import { Button, Col, Input, Row } from "antd";
 import { v4 as uuidv4 } from "uuid";
 import { ActivityForm } from "../listBox/type";
@@ -7,11 +7,12 @@ import { useStyles } from "./style";
 interface FormProps {
   setDataList: React.Dispatch<
     React.SetStateAction<
-      {
-        id: string;
-        isChecked: boolean;
-        title: string;
-      }[]
+      | {
+          id: string;
+          isChecked: boolean;
+          title: string;
+        }[]
+      | undefined
     >
   >;
 }
@@ -21,14 +22,29 @@ function Form({ setDataList }: FormProps) {
 
   const { errors } = ActivityForm.useFormState();
   const { handleSubmit, reset, getValues } = ActivityForm.useFormContext();
+  const { isEditMode } = ActivityForm.useWatch();
 
   const submitHandler = () => {
-    const { title } = getValues();
+    const { title, editId } = getValues();
 
-    setDataList((prev) => [
-      ...prev,
-      { id: uuidv4(), isChecked: false, title: title },
-    ]);
+    if (isEditMode) {
+      setDataList((prev) =>
+        prev?.map((item) =>
+          item.id === editId
+            ? {
+                ...item,
+                title: title,
+              }
+            : item,
+        ),
+      );
+    } else {
+      setDataList((prev) => [
+        ...(prev || []),
+        { id: uuidv4(), isChecked: false, title: title },
+      ]);
+    }
+
     reset();
   };
 
@@ -38,12 +54,12 @@ function Form({ setDataList }: FormProps) {
         <Button
           color="magenta"
           variant="filled"
-          icon={<PlusOutlined />}
+          icon={isEditMode ? <SaveOutlined /> : <PlusOutlined />}
           iconPosition="end"
           disabled={!!errors.title}
           onClick={handleSubmit(submitHandler)}
         >
-          افزودن
+          {isEditMode ? "ذخیره" : "افزودن"}
         </Button>
       </Col>
       <Col flex="auto">

@@ -6,11 +6,13 @@ export const useStyles = createUseStyles(
   ({}) => ({
     listContainer: {
       display: "flex",
+      flexDirection: "column",
       flex: 1,
       width: "100%",
       border: "1px solid #DEDEDE",
       borderRadius: 20,
       padding: 8,
+      gap: 8,
     },
     itemContainer: {
       display: "flex",
@@ -18,7 +20,6 @@ export const useStyles = createUseStyles(
       direction: "rtl",
       justifyContent: "space-between",
       paddingInline: 10,
-      width: "100%",
       height: 60,
       backgroundColor: "red",
       borderRadius: 16,
