@@ -1,0 +1,24 @@
+
+@import "./font";
+@import "./mantine";
+
+html {
+  overscroll-behavior: none;
+  overflow: hidden;
+  background-color: var(--mantine-color-body);
+}
+
+body {
+  overscroll-behavior: none;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+main {
+  height: 100%;
+}
+
+form {
+  height: 100%;
+  overflow: hidden;
+}
