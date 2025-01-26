@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.todo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
