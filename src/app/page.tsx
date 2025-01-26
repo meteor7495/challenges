@@ -1,11 +1,16 @@
 import React from "react";
-import {Stack, Text} from "@mantine/core";
+import {Metadata} from "next";
+import {TodoListPage} from "../lib/to-do-list";
+
+
+export async function generateMetadata(): Promise<Metadata> {
+
+    return {
+        title: 'لیست وظایف'
+    }
+}
 
 export default async function Page() {
 
-    return (
-      <Stack >
-          <Text>مجیبسییسبی</Text>
-      </Stack>
-    );
+    return (<TodoListPage />);
 }
