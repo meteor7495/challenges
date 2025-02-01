@@ -8,7 +8,7 @@ const Home = () => {
       style={{
         maxHeight: "calc(100vh - 40px)",
         overflowY: "auto",
-        padding: "20px",
+        padding: "20px 80px",
         height: "100vh",
         background:
           "linear-gradient(to bottom, rgba(255, 0, 0, 0.3), rgba(255, 165, 0, 0.3), rgba(255, 255, 0, 0.3), rgba(0, 255, 0, 0.3), rgba(0, 0, 255, 0.3), rgba(75, 0, 130, 0.3), rgba(238, 130, 238, 0.3))",
