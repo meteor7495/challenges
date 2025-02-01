@@ -1,45 +1,49 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleTask, removeTask } from "../features/tasksSlice";
-import { Button, List, Container } from "@mantine/core";
+import { Checkbox, Button, List, Container } from "@mantine/core";
 
 const TaskList = () => {
   const tasks = useSelector((state) => state.tasks);
   const dispatch = useDispatch();
 
   return (
-    <Container style={{ textAlign: "center", maxWidth: "500px" }}>
-      <List spacing="sm" center>
+    <Container style={{ textAlign: "center", maxWidth: "600px" }}>
+      <List spacing="sm" center style={{ width: "100%" }}>
         {tasks.map((task, index) => (
           <List.Item
             key={task.id}
             style={{
               display: "flex",
-              justifyContent: "row",
+              justifyContent: "space-between",
               alignItems: "center",
               width: "100%",
-              padding: "10px 0", 
+              padding: "10px 0",
               color: task.completed ? "gray" : "inherit",
             }}
           >
             <div
               style={{
-                textDecoration: task.completed ? "line-through" : "none",
                 display: "flex",
-                flexDirection: "row",
-                alignItems: "right",
+                alignItems: "center",
                 gap: "10px",
-                // flex: 1,
+                flex: 1,
               }}
             >
               <span style={{ fontWeight: "bold" }}>{index + 1}.</span>
-              <span>{task.title}</span>
+              <span style={{ textDecoration: task.completed ? "line-through" : "none" }}>
+                {task.title}
+              </span>
+              <Checkbox 
+                checked={task.completed}
+                onChange={() => dispatch(toggleTask(task.id))}
+                icon={() => null} // راه‌حل صحیح برای حذف آیکن
+              />
             </div>
 
-            <div style={{ display: "flex", gap: "10px",alignItems: "right"}}>
-              <Button onClick={() => dispatch(toggleTask(task.id))}>انجام شد</Button>
-              <Button color="red" size="xs" onClick={() => dispatch(removeTask(task.id))}>حذف</Button>
-            </div>
+            <Button color="red" size="xs" onClick={() => dispatch(removeTask(task.id))}>
+              حذف
+            </Button>
           </List.Item>
         ))}
       </List>

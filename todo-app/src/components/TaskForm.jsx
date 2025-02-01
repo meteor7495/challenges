@@ -26,7 +26,7 @@ const TaskForm = () => {
       onSubmit={handleSubmit(onSubmit)} 
       style={{ display: "flex", justifyContent: "space-between", gap: "10px" }}
     >
-      <TextInput placeholder="عنوان وظیفه" {...register("title")} error={errors.title?.message} />
+      <TextInput placeholder="عنوان تسک" {...register("title")} error={errors.title?.message} />
       <Button type="submit">افزودن</Button>
     </form>
   );
