@@ -1,14 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// Load tasks from local storage (if available)
 const loadFromLocalStorage = () => {
   const data = localStorage.getItem("tasks");
   return data ? JSON.parse(data) : [];
 };
 
+// Save tasks to local storage
 const saveToLocalStorage = (tasks) => {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 };
 
+// Create Redux slice for tasks
 const tasksSlice = createSlice({
   name: "tasks",
   initialState: loadFromLocalStorage(),
