@@ -22,13 +22,31 @@ const TaskForm = () => {
   };
 
   return (
-    <form 
-      onSubmit={handleSubmit(onSubmit)} 
-      style={{ display: "flex", justifyContent: "space-between", gap: "10px" }}
-    >
-      <TextInput placeholder="عنوان تسک" {...register("title")} error={errors.title?.message} />
-      <Button type="submit">افزودن</Button>
-    </form>
+    <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+      <form 
+        onSubmit={handleSubmit(onSubmit)} 
+        style={{ display: "flex", width: "50%",gap:"30px", alignItems: "center" }}
+      >
+        <TextInput
+          placeholder="عنوان تسک"
+          {...register("title")}
+          error={errors.title?.message}
+          w="100%"
+          styles={{
+            input: {
+              width: "100%",
+              backgroundColor: "#f5f5f5", 
+              borderRadius: "8px",
+              padding: "12px", 
+              fontSize: "14px",
+              border: "2px solid #ccc",
+            },
+          }}
+        />
+
+        <Button style={{padding: "12px", borderRadius:"10px"}} type="submit">افزودن</Button>
+      </form>
+    </div>
   );
 };
 

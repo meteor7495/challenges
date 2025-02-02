@@ -8,15 +8,33 @@ const TaskList = () => {
   const dispatch = useDispatch();
 
   return (
-    <Container style={{ textAlign: "center", maxWidth: "600px" }}>
-      <List spacing="sm" center style={{ width: "100%", paddingRight: "0px" }}>
-        {tasks.map((task, index) => (
+    <Container 
+      style={{ 
+        display: "flex", 
+        justifyContent: "center", 
+        alignItems: "center", 
+        height: "80vh",
+      }}
+    >
+      <List 
+        spacing="sm" 
+        center 
+        style={{ 
+          width: "100%", 
+          maxWidth: "600px", 
+          padding: "20px", 
+          margin: "auto", 
+          backgroundColor: "#f9f9f9", 
+          borderRadius: "8px", 
+          boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)", 
+        }}
+      >
+        {tasks.map((task) => (
           <List.Item
             key={task.id}
             style={{
               display: "flex",
-              flexDirection: "row",
-              alignItems: "center", 
+              alignItems: "center",
               justifyContent: "space-between",
               padding: "10px 20px",
               color: task.completed ? "gray" : "inherit",
@@ -31,13 +49,10 @@ const TaskList = () => {
               />
               <span style={{ textDecoration: task.completed ? "line-through" : "none" }}>
                 {task.title}
-              </span>
-            </div>
-
-            <div style={{ marginLeft: "auto" , marginTop:10}}>
-              <Button color="red" size="xs" onClick={() => dispatch(removeTask(task.id))}>
+                <Button style={{color:"red" , marginRight:"20px"}} size="xs" onClick={() => dispatch(removeTask(task.id))}>
                 حذف
               </Button>
+              </span>
             </div>
           </List.Item>
         ))}
