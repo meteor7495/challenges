@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "IRANYekanWebBlack";
+  src: url("/fonts/IRANYekanWebLight.woff2") format("woff2"),
+       url("/fonts/IRANYekanWebLight.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "IRANYekanWebBlack", sans-serif;
+  text-align: center; 
+  direction: rtl;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
