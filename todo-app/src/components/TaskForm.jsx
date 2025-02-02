@@ -45,7 +45,7 @@ const TaskForm = () => {
           }}
         />
 
-        <Button style={{padding: "12px", borderRadius:"10px" , backgroundColor:"#02151" , color:"white"}} type="submit">افزودن</Button>
+        <Button style={{padding: "12px", borderRadius:"10px" , backgroundColor:"yellow" , color:"black"}} type="submit">افزودن</Button>
       </form>
     </div>
   );
