@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { Button, TextInput } from "@mantine/core";
 import { useDispatch } from "react-redux";
-import { addTask } from "../features/tasksSlice";
+import { addTask } from "../store/tasksSlice";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { taskSchema } from "../utils/validators";
 import { v4 as uuidv4 } from "uuid";
@@ -38,13 +38,14 @@ const TaskForm = () => {
               backgroundColor: "#f5f5f5", 
               borderRadius: "8px",
               padding: "12px", 
-              fontSize: "14px",
+              fontSize: "16px",
               border: "2px solid #ccc",
+              fontWeight: "bold",
             },
           }}
         />
 
-        <Button style={{padding: "12px", borderRadius:"10px"}} type="submit">افزودن</Button>
+        <Button style={{padding: "12px", borderRadius:"10px" , backgroundColor:"#02151" , color:"white"}} type="submit">افزودن</Button>
       </form>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleTask, removeTask } from "../features/tasksSlice";
+import { toggleTask, removeTask } from "../store/tasksSlice";
 import { Checkbox, Button, List, Container } from "@mantine/core";
 
 const TaskList = () => {
@@ -47,9 +47,9 @@ const TaskList = () => {
                 onChange={() => dispatch(toggleTask(task.id))}
                 icon={() => null}
               />
-              <span style={{ textDecoration: task.completed ? "line-through" : "none" }}>
+              <span style={{ textDecoration: task.completed ? "line-through" : "none" , fontSize:"20px" , fontWeight:"bold"}}>
                 {task.title}
-                <Button style={{color:"red" , marginRight:"20px"}} size="xs" onClick={() => dispatch(removeTask(task.id))}>
+                <Button style={{color:"red" , marginRight:"20px" , fontSize:"14px" , fontWeight:"bold" , borderRadius:"10px" , padding:"5px" }} size="xs" onClick={() => dispatch(removeTask(task.id))}>
                 حذف
               </Button>
               </span>
