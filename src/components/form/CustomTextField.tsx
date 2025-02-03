@@ -39,8 +39,8 @@ const CustomTextField: React.FC<CustomTextFieldProps> = ({ field }) => {
         }
         InputLabelProps={{
           style: {
-            textAlign: "right", // راست‌چین کردن متن لیبل
-            direction: "rtl",   // تنظیم جهت به RTL برای لیبل
+            textAlign: "right", 
+            direction: "rtl", 
           },
         }}
       />

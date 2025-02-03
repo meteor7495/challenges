@@ -1,4 +1,3 @@
-// components/TaskItem.tsx
 import React from "react";
 import { Box, Button, Checkbox, Typography } from "@mui/material";
 import { Task } from "../../types";
