@@ -1,12 +1,12 @@
-import { Typography } from "@mui/material";
+import { Box, SxProps, Typography } from "@mui/material";
 import TaskItem from "./TaskItem";
 import { useTaskStore } from "../../store/toDoList";
 
-const Tasks: React.FC = () => {
+const Tasks: React.FC<{ sx?: SxProps }> = ({sx}) => {
   const { tasks, removeTask, toggleComplete } = useTaskStore();
 
   return (
-    <>
+    <Box sx={{...sx}}>
       <Typography>لیست وظایف</Typography>
       {tasks.map((task) => (
         <TaskItem
@@ -16,7 +16,7 @@ const Tasks: React.FC = () => {
           onRemove={removeTask}
         />
       ))}
-    </>
+    </Box>
   );
 };
 export default Tasks;

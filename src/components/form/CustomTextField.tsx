@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+import { FormHelperText, TextField } from "@mui/material";
 import React from "react";
 import { FieldValues, useFormContext } from "react-hook-form";
 import { Field } from "./CustomForm";
@@ -31,19 +31,12 @@ const CustomTextField: React.FC<CustomTextFieldProps> = ({ field }) => {
           valueAsNumber: field.type === "number",
         })}
         placeholder={field.placeholder || "این فیلد را پر نمایید"}
-        error={!!methods.formState.errors[field.name]}
-        helperText={
-          methods.formState.errors[field.name]
-            ? String(methods.formState.errors[field.name]?.message)
-            : ""
-        }
-        InputLabelProps={{
-          style: {
-            textAlign: "right", 
-            direction: "rtl", 
-          },
-        }}
-      />
+        error={!!methods.formState.errors[field.name]}      />
+      {methods.formState.errors[field.name] && (
+        <FormHelperText sx={{ textAlign: "right", direction: "rtl", color: "red" }}>
+          {String(methods.formState.errors[field.name]?.message)}
+        </FormHelperText>
+      )}
     </>
   );
 };

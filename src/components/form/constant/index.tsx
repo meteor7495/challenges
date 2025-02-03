@@ -2,8 +2,8 @@ import * as Yup from 'yup';
 import { titleInPersian } from '../../../constants';
 
 export const fields =[
-  { name: "title", label: "عنوان تسک", type: "text", col:8},
-  { name: "description", label: "توضیحات", type: "textarea", col:8 },
+  { name: "title", label: "عنوان تسک", type: "text", col:12},
+  { name: "description", label: "توضیحات", type: "textarea", col:12 },
 ]
 
 export const taskSchema = Yup.object({
