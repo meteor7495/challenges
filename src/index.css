@@ -1,0 +1,13 @@
+body {
+  padding: 50px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+/* Adds space below the text input label */
+.m_8fdc1311 {
+  margin-bottom: 13px;
+}
