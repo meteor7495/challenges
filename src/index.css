@@ -1,0 +1,11 @@
+@import "@mantine/core/styles.css";
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Satoshi", "sans-serif";
+  --breakpoint-3xl: 1920px;
+  --color-primary: oklch(53.38% 0.25 301.37);
+  --color-background1: oklch(62.19% 0.197 258.15);
+  --color-background2: oklch(84.14% 0.101 200.94);
+  --color-gray: oklch(97.76% 0.007 286.28);
+}
