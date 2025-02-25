@@ -1,0 +1,35 @@
+.add_todo_form {
+  width: 580px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.root {
+  position: relative;
+}
+
+.required {
+  transition: opacity 150ms ease;
+  opacity: 0;
+
+  [data-floating] & {
+    opacity: 1;
+  }
+}
+
+.input {
+  &::placeholder {
+    transition: color 150ms ease;
+    color: transparent;
+  }
+
+  &[data-floating] {
+    &::placeholder {
+      color: var(--mantine-color-placeholder);
+    }
+  }
+}
+
+.invalid {
+  background-color: var(--mantine-color-red-light);
+}

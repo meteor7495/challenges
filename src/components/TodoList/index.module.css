@@ -1,0 +1,18 @@
+.list_wrapper {
+  width: 100%;
+}
+
+.card {
+  background-color: var(--mantine-color-body);
+  width: 250px;
+}
+
+.title {
+  line-height: 1;
+}
+
+.trash_icon {
+  &:hover {
+    color: red;
+  }
+}
