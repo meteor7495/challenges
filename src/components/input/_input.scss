@@ -1,0 +1,51 @@
+#input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+
+  .label {
+    color: var(--Neutral_400);
+    padding-inline-start: var(--3);
+    transition: color 0.2s ease;
+
+    &.error-label {
+      color: var(--Red_600);
+    }
+  }
+
+  .error {
+    color: var(--Red_600);
+  }
+
+  .icon {
+    position: absolute;
+    top: 54%;
+    pointer-events: none;
+
+    [dir="ltr"] & {
+      right: 0.75rem;
+      left: auto;
+    }
+
+    [dir="rtl"] & {
+      left: 0.75rem;
+      right: auto;
+    }
+  }
+
+  .input {
+    position: relative;
+    border: 1px solid var(--Neutral_400);
+    border-radius: 0.5rem;
+    padding: 0 1rem;
+    height: 3rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+
+    &.error-border {
+      border-color: var(--Red_600);
+    }
+  }
+}
