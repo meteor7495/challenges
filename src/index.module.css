@@ -1,0 +1,12 @@
+:root {
+  --Neutral_400: #a3a9aa;
+  --Neutral_500: #8f9597;
+  --Red_600: #fc8181;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-style: normal;
+}/*# sourceMappingURL=index.module.css.map */
