@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import style from "./_mainPage.module.scss";
 import { Input } from "../../input/Input";
 import Button from "../../button/button";

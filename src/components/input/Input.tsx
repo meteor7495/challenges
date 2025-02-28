@@ -17,8 +17,7 @@ export const Input = memo(
       const inputClass = clsx("input", className, {
         "error-border": error,
       });
-      const errorMessage = error?.message
-
+      const errorMessage = error?.message;
 
       return (
         <div id="input">
@@ -27,8 +26,8 @@ export const Input = memo(
           {errorMessage && <div className="error">{errorMessage}</div>}
         </div>
       );
-    }
-  )
+    },
+  ),
 );
 
 Input.displayName = "Input";
