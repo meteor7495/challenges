@@ -1,0 +1,19 @@
+.button {
+  white-space: nowrap;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background-color: #2c7a7b;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #319795;
+  }
+
+  &:focus {
+    background-color: #285e61;
+  }
+}
