@@ -7,7 +7,7 @@ type InputProps = ComponentPropsWithRef<"input"> & {
   Icon?: React.ReactNode;
   className?: string;
   label?: string;
-  error?: any;
+  error?: { message?: string };
 };
 
 export const Input = memo(
@@ -17,13 +17,14 @@ export const Input = memo(
       const inputClass = clsx("input", className, {
         "error-border": error,
       });
+      const errorMessage = error?.message
+
 
       return (
         <div id="input">
           <div className={labelClass}>{label}</div>
           <input ref={ref} type="text" className={inputClass} {...rest} />
-          {error && <div className="error">{error}</div>}
-          {Icon && <div className="icon">{Icon}</div>}
+          {errorMessage && <div className="error">{errorMessage}</div>}
         </div>
       );
     }
