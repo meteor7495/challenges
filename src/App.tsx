@@ -1,9 +1,12 @@
-import React from 'react'
+import MainPage from "./components/pages/mainPage/mainPage";
+import { TodoProvider } from "./context/TaskContext";
 
 const App = () => {
   return (
-    <div>App</div>
-  )
-}
+    <TodoProvider>
+      <MainPage />
+    </TodoProvider>
+  );
+};
 
-export default App
+export default App;
