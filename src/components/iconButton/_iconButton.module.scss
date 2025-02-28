@@ -1,0 +1,22 @@
+.iconButton {
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+
+
+  &:hover {
+    opacity: .8;
+  }
+
+  &.success {
+    background-color: var(--Teal_900);
+  }
+  &.error {
+    background-color: var(--Red_900);
+  }
+}
