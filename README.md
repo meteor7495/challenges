@@ -1,41 +1,54 @@
-# To-Do List Challenge
+# React + TypeScript + Vite
 
-## هدف
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-ایجاد یک برنامه لیست وظایف ساده با استفاده از تکنولوژی هایی که در پایین آورده شده.
+Currently, two official plugins are available:
 
-## تکنولوژی های مورد نیاز:
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-1. React-Hook-Form / Formik
-2. State Management (Zustand, Recoil, Redux Or Context API)
-3. Ui Kit (Mantine, MUI Or Ant Design)
-4. Plus, در صورت استفاده نکردن از UI Kit پیشنهاد میشود از sass module استفاده کنید که مزیت محسوب می شود.
-5. Form Validator(Zod OR Yup)
-6. Typescript، استفاده از تایپ اسکریپت الزامی می باشد
+## Expanding the ESLint configuration
 
-## وظایف
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-1. یک فرم برای اضافه کردن وظایف جدید ایجاد کنید.
-2. فرم دارای یک فیلد عنوان باشد که فقط حروف فارسی در آن استفاده شود.
-3. امکان علامت‌گذاری وظایف به عنوان تکمیل شده و حذف وظایف را اضافه کنید.
-4. از State Manager مورد نظر استفاده کنید. برای مدیریت حالت.
-5. با رفرش کردن صفحه وظایف ثبت شده از بین نرود.
-6. Validation هایی بدیهی و ضروری که خودتون فکر میکنید بهبود دهنده فرم هستند استفاده کنی.
-7. لطفا از کامپوننت های آماده UI Kit که انتخاب کردید استفاده کنید.
-8. طراحی ساده و کاربردی باشد.
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
 
-## الزامات
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
--   کد تمیز و خوانا
--   ارائه توضیحات کافی در کد
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-## ارسال پاسخ
-
-1. این repository را Fork کنید.
-2. تغییرات خود را در Fork خود اعمال کنید.
-3. یک Pull Request به این repository ارسال کنید.
-
-## راه‌اندازی پروژه
-
-1. ریپو را کلون کنید.
-2. با استفاده از ری اکت این پروژه را از ابتدا ایجاد کنید
+export default tseslint.config({
+  plugins: {
+    // Add the react-x and react-dom plugins
+    'react-x': reactX,
+    'react-dom': reactDom,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended typescript rules
+    ...reactX.configs['recommended-typescript'].rules,
+    ...reactDom.configs.recommended.rules,
+  },
+})
+```
